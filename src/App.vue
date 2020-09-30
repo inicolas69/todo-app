@@ -29,8 +29,7 @@ export default {
         done: false,
         content: newTodo.value,
       });
-      console.log(todos.value);
-      console.log(newTodo.value);
+      newTodo.value = ''
     }
 
     function toggleDone(todo) {
