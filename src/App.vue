@@ -7,20 +7,22 @@
   </form>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)"> {{todo.content}} </h3>
+      <h3 :class="{ done: todo.done }" @click="test()"> {{todo.content}} </h3>
     </li>
   </ul>
 </template>
 
 <script>
 import { ref } from 'vue';
+require('dotenv').config();
+
 export default {
   setup() {
     const newTodo = ref('');
     const todos = ref([]);
 
     function test() {
-      console.log('Toto');
+      console.log(process.env.apiKEY);
     }
 
     function addNewTodo() {
